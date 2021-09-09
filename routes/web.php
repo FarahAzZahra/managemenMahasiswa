@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DataMahasiswaController@index')->name('home');
 
-Route::post('/create', 'DataMahasiswaController@create')->name('create');
+Route::get('/create', 'DataMahasiswaController@create')->name('create');
+Route::post('/store', 'DataMahasiswaController@store');

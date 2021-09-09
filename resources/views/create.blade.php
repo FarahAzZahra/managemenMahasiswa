@@ -13,9 +13,8 @@
 </div>
  
  
-<form action="/mahasiswa/create" method="POST">
-    @csrf  
-    @method('POST')
+<form action="{{ url('/store') }}" method="POST">
+    {{ csrf_field() }}
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

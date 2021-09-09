@@ -27,7 +27,7 @@ class DataMahasiswaController extends Controller
      */
     public function create()
     {
-        return "Form Submit";
+        return view('create');
     }
 
     /**
@@ -38,7 +38,18 @@ class DataMahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('tabel_mahasiswa')->insert(
+            [
+                'nama'=>$request->nama,
+                'kelas'=>$request->kelas,
+                'jurusan'=>$request->jurusan,
+                'angkatan'=>$request->angkatan,
+                'email' => $request->email, 
+                'no_hp'=>$request->no_hp,
+                'alamat'=>$request->alamat
+                ]
+        );
+        return redirect('/')->with('status', 'Data success');
     }
 
     /**
